@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # Fabric script that packs the contents of web static into .tgz archive
 from fabric.api import local
 from datetime import datetime
