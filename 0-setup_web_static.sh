@@ -13,7 +13,7 @@ echo "Hello World!" | sudo tee /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -hR ubuntu:ubuntu /data/
 
-sudo printf %s "server {
+printf %s "server {
      listen      80 default_server;
      listen      [::]:80 default_server;
      server_name = $HOST_NAME;
