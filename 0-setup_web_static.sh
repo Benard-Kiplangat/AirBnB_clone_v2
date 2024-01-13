@@ -9,17 +9,18 @@ sudo mkdir -p /data/web_static/
 sudo mkdir -p /data/web_static/releases/
 sudo mkdir -p /data/web_static/shared/
 sudo mkdir -p /data/web_static/releases/test/
-echo "Hello World!" > /data/web_static/releases/test/index.html
+echo "Hello World!" | sudo tee /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -hR ubuntu:ubuntu /data/
 
 sudo printf %s "server {
      listen      80 default_server;
      listen      [::]:80 default_server;
+     server_name = $HOST_NAME;
      location /hbnb_static/ {
      			alias /data/web_static/current/;
 		}
      index       index.html index.htm;
 }
 " > /etc/nginx/sites-available/default
-sudo nginx -s reload
+sudo service nginx start
