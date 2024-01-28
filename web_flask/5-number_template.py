@@ -4,7 +4,7 @@ Prints hello, HBNB! on route "/", HBNB on route "/hbnb",
 C is + text passed, and Python + text passed or is cool
 """
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
