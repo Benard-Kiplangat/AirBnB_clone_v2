@@ -17,15 +17,15 @@ def hbnb_route():
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """Returns HBNB"""
+    """prints HBNB"""
     return "HBNB"
 
 
-@app.route('/c/<string:cvariable>', strict_slashes=False)
-def c_route(cvariable):
-    """Returns C is + text passed"""
-    cvariable = cvariable.replace("_", " ")
-    return "C is %s" % cvariable
+@app.route('/c/<string:text>', strict_slashes=False)
+def c_text(text):
+    """prints C followed by <text> content"""
+    text = text.replace("_", " ")
+    return "C %s" % text
 
 
 if __name__ == "__main__":
