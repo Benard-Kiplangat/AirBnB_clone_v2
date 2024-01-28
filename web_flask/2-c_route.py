@@ -10,21 +10,22 @@ app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def hello_hbnb():
+def hbnb_route():
     """Returns Hello, HBNB!"""
     return "Hello, HBNB!"
 
 
 @app.route('/hbnb', strict_slashes=False)
-def hbnb_route():
+def hbnb():
     """Returns HBNB"""
     return "HBNB"
 
 
 @app.route('/c/<string:cvariable>', strict_slashes=False)
-def hbnb_c_route(cvariable):
+def c_route(cvariable):
     """Returns C is + text passed"""
-    return "C is %s" % cvariable.replace('_', ' ')
+    cvariable = cvariable.replace("_", " ")
+    return "C is %s" % cvariable
 
 
 if __name__ == "__main__":
