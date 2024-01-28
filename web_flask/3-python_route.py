@@ -21,18 +21,20 @@ def hbnb_route():
     return "HBNB"
 
 
-@app.route("/c/<string:cvariable>", strict_slashes=False)
-def hbnb_c_route(cvariable):
-    """Returns C is + text passed"""
-    return "C is {}".format(cvariable.replace('_', ' '))
+@app.route('/c/<string:text>', strict_slashes=False)
+def c_text(text):
+    """prints C followed by <text> content"""
+    text = text.replace("_", " ")
+    return "C %s" % text
 
 
 @app.route('/python', strict_slashes=False)
-@app.route("/python/<string:pvariable>", strict_slashes=False)
-def hbnb_p_route(pvariable="is cool"):
-    """Returns Python + text passed or is cool"""
-    return "Python {}".format(pvariable.replace('_', ' '))
+@app.route('/python/<string:text>', strict_slashes=False)
+def python_text(text="is cool"):
+    """prints Python is cool"""
+    text = text.replace("_", " ")
+    return "Python %s" % text
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0")
