@@ -1,17 +1,18 @@
 #!/usr/bin/python3
 """
 Returns Hello, HBNB! on route "/"
+Listening on 0.0.0.0:5000
+Route '/' displays "Hello HBNB!"
 """
-
 from flask import Flask
 
 app = Flask(__name__)
 
 
-@app.route("/", strict_slashes=False)
+@app.route('/', strict_slashes=False)
 def hello_route():
-    """Returns Hello, HBNB!"""
-    return "Hello, HBNB!"
+    """Displays 'Hello HBNB!'"""
+    return "Hello HBNB!"
 
 
 if __name__ == "__main__":
